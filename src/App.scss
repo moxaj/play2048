@@ -1,0 +1,100 @@
+.content {
+  padding: 2rem;
+  border: 2px solid rgb(61, 61, 61);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  .title {
+    font-size: 6rem;
+    font-weight: 700;
+  }
+
+  .board {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .cell {
+      width: calc(20% + 4px);
+      height: calc(20% + 4px);
+      border: 2px solid rgb(61, 61, 61);
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1.6rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @mixin cell($value) {
+        color: white;
+        background-color: rgba(0, 0, 0, calc(1 - 1 / $value));
+      }
+
+      &-1 {
+        color: black;
+        background-color: white;
+      }
+
+      &-2 {
+        @include cell(2);
+      }
+
+      &-3 {
+        @include cell(3);
+      }
+
+      &-4 {
+        @include cell(4);
+      }
+
+      &-5 {
+        @include cell(5);
+      }
+
+      &-6 {
+        @include cell(6);
+      }
+
+      &-7 {
+        @include cell(7);
+      }
+
+      &-8 {
+        @include cell(8);
+      }
+
+      &-9 {
+        @include cell(9);
+      }
+
+      &-10 {
+        @include cell(10);
+      }
+
+      &-11 {
+        @include cell(11);
+      }
+    }
+
+    .lost-message {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      color: white;
+      font-size: 5rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
